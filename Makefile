@@ -29,7 +29,7 @@ SRCS_FILES	=	main_mandatory \
 SRCS 		= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRCS_FILES)))
 OBJS		= $(SRCS:.c=.o)
 
-BSRCS_FILES	=	main_bonus \
+BSRCS_FILES	=	main_bonus handle_bonus \
 				push_swap ft_error ft_check_arg parsing ft_insert min_max \
 				calculated_move \
 				display_process ft_utils check_is_sort extract_method \
@@ -41,7 +41,9 @@ BSRCS_FILES	=	main_bonus \
 				operations/ft_push \
 				operations/ft_reverse_rotate \
 				operations/ft_rotate \
-				operations/ft_swap
+				operations/ft_swap \
+				get_next_line \
+				get_next_line_utils
 SRCS_BONUS	= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(BSRCS_FILES)))
 BONUS_OBJS	= $(SRCS_BONUS:.c=.o)
 

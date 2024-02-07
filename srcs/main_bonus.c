@@ -6,13 +6,23 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:09:22 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/29 17:57:59 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/02/07 19:00:55 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 #include "push_swap.h"
+
+static int	length_params(char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (argv[i])
+		i++;
+	return (i);
+}
 
 int	main(int argc, char **argv)
 {
@@ -23,9 +33,12 @@ int	main(int argc, char **argv)
 		return (0);
 	tab = get_list_params(argc, argv);
 	if (!tab)
+		return (0);
+	argc = length_params(tab);
+	if (!tab)
 		ft_error("Failed to allocate memory.");
-	if (check_argv(argc - 1, tab))
-		init_and_sort_stack(argc - 1, tab, 1);
+	if (check_argv(argc, tab) && argc > 1)
+		handle_bonus(argc, tab);
 	else
 	{
 		free_tab(tab);
@@ -34,3 +47,4 @@ int	main(int argc, char **argv)
 	}
 	free_tab(tab);
 }
+

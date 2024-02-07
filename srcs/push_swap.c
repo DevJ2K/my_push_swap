@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:30:52 by tajavon           #+#    #+#             */
-/*   Updated: 2024/01/18 12:53:05 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/02/07 09:23:32 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "push_swap.h"
 #include "libft.h"
 
-static void	fill_stack(int **stack, int stack_size, char **argv)
+void	fill_stack(int **stack, int stack_size, char **argv)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ static void	fill_stack(int **stack, int stack_size, char **argv)
 	}
 }
 
-static void	check_sort(t_stack stack_a, t_stack stack_b)
+void	check_sort(t_stack stack_a, t_stack stack_b)
 {
 	int	i;
 

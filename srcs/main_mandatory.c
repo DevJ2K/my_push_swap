@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:09:24 by tajavon           #+#    #+#             */
-/*   Updated: 2024/01/20 14:53:10 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/02/07 19:00:51 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 	argc = length_params(tab);
 	if (!tab)
 		ft_error("Failed to allocate memory.");
-	if (check_argv(argc - 1, tab))
+	if (check_argv(argc, tab) && argc > 1)
 		init_and_sort_stack(argc, tab, 0);
 	else
 	{
