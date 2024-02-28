@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 09:15:29 by tajavon           #+#    #+#             */
-/*   Updated: 2024/02/07 19:03:32 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/02/28 12:42:04 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,45 @@
 #include "push_swap.h"
 #include "get_next_line.h"
 
+static int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i])
+	{
+		if (s1[i] != s2[i])
+			return (1);
+		i++;
+	}
+	return (s2[i] - s1[i]);
+}
+
 static int	execute_action(
 	t_stack *stack_a, t_stack *stack_b, size_t entry_size, char *entry)
 {
-	if (ft_strncmp("sa", entry, entry_size) == 0)
+	(void)entry_size;
+	if (ft_strcmp("sa\n", entry) == 0)
 		return(ft_swap(stack_a), 0);
-	else if (ft_strncmp("sb", entry, entry_size) == 0)
+	else if (ft_strcmp("sb\n", entry) == 0)
 		return(ft_swap(stack_b), 0);
-	else if (ft_strncmp("ss", entry, entry_size) == 0)
+	else if (ft_strcmp("ss\n", entry) == 0)
 		return(ft_double_swap(stack_a, stack_b), 0);
-	else if (ft_strncmp("pa", entry, entry_size) == 0)
+	else if (ft_strcmp("pa\n", entry) == 0)
 		return(ft_push(stack_b, stack_a), 0);
-	else if (ft_strncmp("pb", entry, entry_size) == 0)
+	else if (ft_strcmp("pb\n", entry) == 0)
 		return(ft_push(stack_a, stack_b), 0);
-	else if (ft_strncmp("ra", entry, entry_size) == 0)
+	else if (ft_strcmp("ra\n", entry) == 0)
 		return(ft_rotate(stack_a), 0);
-	else if (ft_strncmp("rb", entry, entry_size) == 0)
+	else if (ft_strcmp("rb\n", entry) == 0)
 		return(ft_rotate(stack_b), 0);
-	else if (ft_strncmp("rr", entry, entry_size) == 0)
+	else if (ft_strcmp("rr\n", entry) == 0)
 		return(ft_double_rotate(stack_a, stack_b), 0);
-	else if (ft_strncmp("rra", entry, entry_size) == 0)
+	else if (ft_strcmp("rra\n", entry) == 0)
 		return(ft_reverse_rotate(stack_a), 0);
-	else if (ft_strncmp("rrb", entry, entry_size) == 0)
+	else if (ft_strcmp("rrb\n", entry) == 0)
 		return(ft_reverse_rotate(stack_b), 0);
-	else if (ft_strncmp("rrr", entry, entry_size) == 0)
+	else if (ft_strcmp("rrr\n", entry) == 0)
 		return(ft_double_reverse_rotate(stack_a, stack_b), 0);
 	return (-1);
 }

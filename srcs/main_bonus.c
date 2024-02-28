@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:09:22 by tajavon           #+#    #+#             */
-/*   Updated: 2024/02/07 19:00:55 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/02/27 12:26:29 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 	argc = length_params(tab);
 	if (!tab)
 		ft_error("Failed to allocate memory.");
-	if (check_argv(argc, tab) && argc > 1)
+	if (check_argv(argc, tab) && argc >= 1)
 		handle_bonus(argc, tab);
 	else
 	{
