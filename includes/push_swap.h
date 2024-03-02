@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:02:02 by tajavon           #+#    #+#             */
-/*   Updated: 2024/02/27 16:48:35 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/03/02 18:27:56 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 # ifndef SHOW_STACK
-#  define SHOW_STACK 1
+#  define SHOW_STACK 0
+# endif
+# ifndef BONUS
+#  define BONUS 0
 # endif
 
 typedef struct s_stack

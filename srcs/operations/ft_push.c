@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:11:34 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/24 00:42:40 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/03/02 18:30:17 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,8 @@ void	ft_push(t_stack *stack_src, t_stack *stack_dest)
 			display_process_2("p", stack_dest->name, *stack_dest, *stack_src);
 	}
 	else
-		ft_printf("p%c\n", stack_dest->name);
+	{
+		if (BONUS != 1)
+			ft_printf("p%c\n", stack_dest->name);
+	}
 }

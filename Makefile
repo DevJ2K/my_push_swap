@@ -5,7 +5,7 @@ NAME		= push_swap
 BONUS_NAME	= checker
 CC			= gcc
 INCLUDES	= includes
-CFLAGS		= -Wall -Werror -Wextra -I
+CFLAGS		= -Wall -Werror -Wextra
 FT_PRINTF	= ft_printf
 LIBFT		= libft
 RM			= rm -f
@@ -48,7 +48,7 @@ SRCS_BONUS	= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(BSRCS_FILES)))
 BONUS_OBJS	= $(SRCS_BONUS:.c=.o)
 
 .c.o:
-		@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $(<:.c=.o)
+		@$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $(<:.c=.o)
 
 ########################################
 ########## RULES
@@ -75,12 +75,15 @@ fclean: 	clean
 
 re:			fclean all
 
-bonus:	$(BONUS_OBJS)
-			make -C $(FT_PRINTF)
-			make -C $(LIBFT)
-			mv ft_printf/libftprintf.a .
-			mv libft/libft.a .
-			$(CC) $(BONUS_OBJS) libftprintf.a libft.a -o $(BONUS_NAME)
+bonus_compil:	$(BONUS_OBJS)
+				make -C $(FT_PRINTF)
+				make -C $(LIBFT)
+				mv ft_printf/libftprintf.a .
+				mv libft/libft.a .
+				$(CC) $(BONUS_OBJS) libftprintf.a libft.a -o $(BONUS_NAME)
+
+bonus: CFLAGS += -D BONUS=1
+bonus: fclean bonus_compil
 
 norm:
 			norminette $(SRCS) $(INCLUDES) $(FT_PRINTF) $(LIBFT) | grep -v Norme -B1 || true

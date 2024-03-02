@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:33:41 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/26 20:38:08 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/03/02 18:31:16 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ void	ft_rotate(t_stack *stack)
 	if (SHOW_STACK)
 		display_process_1("r", *stack);
 	else
-		ft_printf("r%c\n", stack->name);
+	{
+		if (BONUS != 1)
+			ft_printf("r%c\n", stack->name);
+	}
 }
 
 void	ft_double_rotate(t_stack *stack_1, t_stack *stack_2)
@@ -57,5 +60,8 @@ void	ft_double_rotate(t_stack *stack_1, t_stack *stack_2)
 	if (SHOW_STACK)
 		display_process_2("r", 'r', *stack_1, *stack_2);
 	else
-		ft_printf("rr\n");
+	{
+		if (BONUS != 1)
+			ft_printf("rr\n");
+	}
 }

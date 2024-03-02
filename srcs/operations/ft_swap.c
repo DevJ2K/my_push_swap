@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:09:58 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/27 12:06:02 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/03/02 18:31:51 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ void	ft_swap(t_stack *stack)
 	if (SHOW_STACK)
 		display_process_1("s", *stack);
 	else
-		ft_printf("s%c\n", stack->name);
+	{
+		if (BONUS != 1)
+			ft_printf("s%c\n", stack->name);
+	}
 }
 
 void	ft_double_swap(t_stack *stack_1, t_stack *stack_2)
@@ -43,5 +46,8 @@ void	ft_double_swap(t_stack *stack_1, t_stack *stack_2)
 	if (SHOW_STACK)
 		display_process_2("s", 's', *stack_1, *stack_2);
 	else
-		ft_printf("ss\n");
+	{
+		if (BONUS != 1)
+			ft_printf("ss\n");
+	}
 }
