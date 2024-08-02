@@ -53,7 +53,6 @@ BONUS_OBJS	= $(SRCS_BONUS:.c=.o)
 ########################################
 ########## RULES
 
-all: CFLAGS = -Wall -Werror -Wextra -D BONUS=0
 all:		$(NAME)
 
 bonus: CFLAGS += -D BONUS=1
