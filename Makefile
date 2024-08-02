@@ -38,10 +38,10 @@ BSRCS_FILES	=	main_bonus handle_bonus \
 				algorithms/algorithm_up_to_3 \
 				algorithms/algorithm_up_to_5 \
 				algorithms/algorithm_up_to_n \
-				operations/ft_push \
-				operations/ft_reverse_rotate \
-				operations/ft_rotate \
-				operations/ft_swap \
+				operations/bonus/ft_push \
+				operations/bonus/ft_reverse_rotate \
+				operations/bonus/ft_rotate \
+				operations/bonus/ft_swap \
 				get_next_line \
 				get_next_line_utils
 SRCS_BONUS	= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(BSRCS_FILES)))
@@ -53,7 +53,12 @@ BONUS_OBJS	= $(SRCS_BONUS:.c=.o)
 ########################################
 ########## RULES
 
+all: CFLAGS = -Wall -Werror -Wextra -D BONUS=0
 all:		$(NAME)
+
+bonus: CFLAGS += -D BONUS=1
+bonus:		$(BONUS_NAME)
+
 
 $(NAME):	$(OBJS)
 				make -C $(FT_PRINTF)
@@ -61,6 +66,13 @@ $(NAME):	$(OBJS)
 				mv ft_printf/libftprintf.a .
 				mv libft/libft.a .
 				$(CC) $(OBJS) libftprintf.a libft.a -o $(NAME)
+
+$(BONUS_NAME):	$(BONUS_OBJS)
+				make -C $(FT_PRINTF)
+				make -C $(LIBFT)
+				mv ft_printf/libftprintf.a .
+				mv libft/libft.a .
+				$(CC) $(BONUS_OBJS) libftprintf.a libft.a -o $(BONUS_NAME)
 
 clean:
 				$(RM) $(OBJS) $(BONUS_OBJS)
@@ -82,8 +94,8 @@ bonus_compil:	$(BONUS_OBJS)
 				mv libft/libft.a .
 				$(CC) $(BONUS_OBJS) libftprintf.a libft.a -o $(BONUS_NAME)
 
-bonus: CFLAGS += -D BONUS=1
-bonus: fclean bonus_compil
+# bonus: CFLAGS += -D BONUS=1
+# bonus: fclean bonus_compil
 
 norm:
 			norminette $(SRCS) $(INCLUDES) $(FT_PRINTF) $(LIBFT) | grep -v Norme -B1 || true
