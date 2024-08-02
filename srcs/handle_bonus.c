@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 09:15:29 by tajavon           #+#    #+#             */
-/*   Updated: 2024/02/28 12:42:04 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/08/02 23:59:24 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,27 @@ static int	execute_action(
 {
 	(void)entry_size;
 	if (ft_strcmp("sa\n", entry) == 0)
-		return(ft_swap(stack_a), 0);
+		return (ft_swap(stack_a), 0);
 	else if (ft_strcmp("sb\n", entry) == 0)
-		return(ft_swap(stack_b), 0);
+		return (ft_swap(stack_b), 0);
 	else if (ft_strcmp("ss\n", entry) == 0)
-		return(ft_double_swap(stack_a, stack_b), 0);
+		return (ft_double_swap(stack_a, stack_b), 0);
 	else if (ft_strcmp("pa\n", entry) == 0)
-		return(ft_push(stack_b, stack_a), 0);
+		return (ft_push(stack_b, stack_a), 0);
 	else if (ft_strcmp("pb\n", entry) == 0)
-		return(ft_push(stack_a, stack_b), 0);
+		return (ft_push(stack_a, stack_b), 0);
 	else if (ft_strcmp("ra\n", entry) == 0)
-		return(ft_rotate(stack_a), 0);
+		return (ft_rotate(stack_a), 0);
 	else if (ft_strcmp("rb\n", entry) == 0)
-		return(ft_rotate(stack_b), 0);
+		return (ft_rotate(stack_b), 0);
 	else if (ft_strcmp("rr\n", entry) == 0)
-		return(ft_double_rotate(stack_a, stack_b), 0);
+		return (ft_double_rotate(stack_a, stack_b), 0);
 	else if (ft_strcmp("rra\n", entry) == 0)
-		return(ft_reverse_rotate(stack_a), 0);
+		return (ft_reverse_rotate(stack_a), 0);
 	else if (ft_strcmp("rrb\n", entry) == 0)
-		return(ft_reverse_rotate(stack_b), 0);
+		return (ft_reverse_rotate(stack_b), 0);
 	else if (ft_strcmp("rrr\n", entry) == 0)
-		return(ft_double_reverse_rotate(stack_a, stack_b), 0);
+		return (ft_double_reverse_rotate(stack_a, stack_b), 0);
 	return (-1);
 }
 

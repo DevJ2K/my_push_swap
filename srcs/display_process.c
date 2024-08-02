@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 10:25:25 by tajavon           #+#    #+#             */
-/*   Updated: 2023/11/29 18:19:45 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/08/03 00:00:08 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ static void	show_stack(t_stack stack, int nb_s)
 	if (nb_s == 1)
 		ft_printf("PILE %c [\033[38;5;32m%d\033[0m] -> [", stack.name, nb_elts);
 	else if (nb_s == 2)
-		ft_printf("PILE %c [\033[38;5;208m%d\033[0m] -> [", stack.name, nb_elts);
+		ft_printf("PILE %c [\033[38;5;208m%d\033[0m] -> [",
+			stack.name, nb_elts);
 	while (i + 1 < nb_elts)
 	{
 		ft_printf("%d-", stack.stack[i]);

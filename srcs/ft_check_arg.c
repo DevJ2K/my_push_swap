@@ -6,7 +6,7 @@
 /*   By: tajavon <tajavon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 12:19:13 by tajavon           #+#    #+#             */
-/*   Updated: 2024/02/27 16:55:45 by tajavon          ###   ########.fr       */
+/*   Updated: 2024/08/02 23:58:39 by tajavon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ static int	only_number(int argc, char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (48 <= argv[i][j] && argv[i][j] <= 57)
-				j++;
-			else if ((argv[i][j] == '-' || argv[i][j] == '+') && j == 0
-			&& ft_strlen(argv[i]) != 1)
+			if (48 <= argv[i][j] && argv[i][j] <= 57 || ((argv[i][j] == '-'
+			|| argv[i][j] == '+') && j == 0 && ft_strlen(argv[i]) != 1))
 				j++;
 			else if (argv[i][j] == '\\')
 			{
